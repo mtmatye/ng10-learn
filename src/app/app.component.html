@@ -45,6 +45,29 @@
   </div>
 </div> -->
 
-<div id="app">
+<!-- <div id="app">
   <app-layout></app-layout>
+</div> -->
+
+<!-- <div id="app">
+  <div app-for></div>
+  <app-layout></app-layout>
+
+  <p appHighlight [highlightColor]="'green'">highlight directive</p>
+</div> -->
+
+<!-- <div class="main">
+  <app-example></app-example>
+</div> -->
+
+<div class="main">
+  <!-- <app-tpl-container></app-tpl-container> -->
+  <app-tpl-outlet></app-tpl-outlet>
+  <hr />
+  <app-tpl-outlet [render]="outletTpl"></app-tpl-outlet>
 </div>
+
+<ng-template #outletTpl let-default let-val="value">
+  <h4>test more and more</h4>
+  <p>default:{{ default }} | value: {{ val }}</p>
+</ng-template>

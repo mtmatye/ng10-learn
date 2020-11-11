@@ -1,0 +1,20 @@
+<p>tpl-outlet works!</p>
+
+<div class="outlet">
+  <h3>template outlet</h3>
+  <div class="contents">
+    <ng-template
+      *ngTemplateOutlet="render || defaultTpl; context: tplContext"
+    ></ng-template>
+    <!-- <ng-template
+      [ngTemplateOutlet]="render || defaultTpl"
+      [ngTemplateOutletContext]="tplContext"
+    ></ng-template> -->
+    <span>a piece of content</span>
+  </div>
+</div>
+
+<ng-template #defaultTpl let-def>
+  <h4>default content</h4>
+  <h5>default::{{ def }}</h5>
+</ng-template>

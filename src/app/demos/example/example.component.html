@@ -1,0 +1,22 @@
+<p>example works!</p>
+
+<div class="demo">
+  <section class="m-auto">
+    aaa
+    <app-structural></app-structural>
+  </section>
+
+  <section>
+    <button class="btn btn-primary" (click)="hide = !hide">toggle hide</button>
+    <p *appUnless="hide">test more and more</p>
+    <p *appUnless="hide as un">test more and more alias un -- {{ un }}</p>
+    <p *appUnless="hide; let un">test more and more let un -- {{ un }}</p>
+    <p *appUnless="hide; let attr = attr">
+      test more and more let attr -- {{ attr }}
+    </p>
+
+    <ng-template [appUnless]="hide" let-attr="attr" let-un>
+      <p>test more and more--attr: {{ attr }} ---un:{{ un }}</p>
+    </ng-template>
+  </section>
+</div>

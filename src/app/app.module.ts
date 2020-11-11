@@ -13,6 +13,12 @@ import { TplOperatorsComponent } from './demos/components/tpl-operators/tpl-oper
 import { TransferPanelComponent } from './demos/components/transfer-panel/transfer-panel.component';
 import { LayoutComponent } from './pages/layout/layout.component';
 import { HerosComponent } from './pages/heros/heros.component';
+import { HighlightDirective } from './demos/directives/highlight.directive';
+import { ExampleComponent } from './demos/example/example.component';
+import { StructuralComponent } from './demos/components/structural/structural.component';
+import { UnlessDirective } from './demos/directives/unless.directive';
+import { TplContainerComponent } from './demos/components/tpl-container/tpl-container.component';
+import { TplOutletComponent } from './demos/components/tpl-outlet/tpl-outlet.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +32,12 @@ import { HerosComponent } from './pages/heros/heros.component';
     TransferPanelComponent,
     LayoutComponent,
     HerosComponent,
+    HighlightDirective,
+    ExampleComponent,
+    StructuralComponent,
+    UnlessDirective,
+    TplContainerComponent,
+    TplOutletComponent,
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule],
   providers: [],
