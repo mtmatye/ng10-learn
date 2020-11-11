@@ -1,0 +1,19 @@
+<section>
+  <h3>管道</h3>
+    title : {{title}} <br>
+    title | lowercase : {{title | lowercase}}<br>
+    title | lowercase | uppercase : {{title | lowercase | uppercase}}
+  <br>
+    obj: {{obj}}<br>
+    <p>obj: {{obj | json}}</p>
+  <br>
+    now: {{now}}<br>
+    <p>now: {{now | date}}</p>
+    <p>now: {{now | date:'yyyy-MM-dd'}}</p>
+    <p>now: {{now | date:'longDate'}}</p>
+</section>
+
+<section>
+  <h3>安全导航运算符 | 可选链 ?</h3>
+  name: {{hero?.name}}
+</section>

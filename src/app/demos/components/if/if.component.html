@@ -1,0 +1,27 @@
+<button class="btn btn-primary" (click)="showIf = !showIf">TOOGLE</button>
+
+<div class="jumbotron" *ngIf="showIf else elseBlock">
+  <h1 class="display-4">Hello, world!</h1>
+  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+  <hr class="my-4">
+  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+  <a class="btn btn-primary btn-lg" href="#" role="button">Learn more and more</a>
+</div>
+
+<ng-template #elseBlock>
+  <h4>Test more and more</h4>
+</ng-template>
+
+<button class="btn btn-primary" (click)="showBlock = !showBlock">TOOGLE</button>
+<!--<div class="block" *ngIf="showBlock">-->
+<!--  another block-->
+<!--</div>-->
+<ng-template [ngIf]="showBlock" [ngIfElse]="elseBlock2">
+  <div class="block" >
+    another block
+  </div>
+</ng-template>
+
+<ng-template #elseBlock2>
+  <h4>Adjust more and more</h4>
+</ng-template>

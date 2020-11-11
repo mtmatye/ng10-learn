@@ -1,0 +1,22 @@
+<p>for works!</p>
+
+<input type="text" [(ngModel)]="str" (keyup.enter)="add()">
+<div class="btns">
+  <button class="btn btn-primary" (click)="add()">ADD</button>
+  <button class="btn btn-danger" (click)="reset()">RESET</button>
+</div>
+<ul>
+  <li *ngFor="let item of heros trackBy: trackByHero" [style.color]="item.id === 'hero_2' ? 'orange' : '#333'" >{{ item.id + ' : ' + item.name }}</li>
+</ul>
+<!--<ul>-->
+<!--  <li-->
+<!--    *ngFor="let item of heros; index as i count as len; let ev = even; let od = odd; let f = first; let l = last trackBy: trackByHero"-->
+<!--    [class.even]="ev"-->
+<!--    [class.odd]="od">-->
+<!--    <p>first: {{ f }} &#45;&#45; last: {{ l }}</p>-->
+<!--    <p>name: {{ item.name }}</p>-->
+<!--    <p>length: {{ len }}</p>-->
+<!--    <p>index: {{ i }}</p>-->
+<!--    <hr />-->
+<!--  </li>-->
+<!--</ul>-->

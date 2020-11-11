@@ -1,0 +1,12 @@
+<p>tpl-var works!</p>
+
+<input class="form-control" #phone placeholder="phone number" />
+<button class="btn btn-primary" (click)="callPhone(phone.value)">Call</button>
+<p>--------------------------</p>
+<input ref-phone1 placeholder="phone number" />
+<button class="btn btn-primary" (click)="callPhone(phone1.value)">Call</button>
+
+
+<p>引用组件</p>
+<button class="btn btn-primary" (click)="sizer.inc()">inc</button>
+<app-sizer #sizer [(size)]="fontSize"></app-sizer>
