@@ -11,6 +11,8 @@ import { ForComponent } from './demos/components/for/for.component';
 import { TplVarComponent } from './demos/components/tpl-var/tpl-var.component';
 import { TplOperatorsComponent } from './demos/components/tpl-operators/tpl-operators.component';
 import { TransferPanelComponent } from './demos/components/transfer-panel/transfer-panel.component';
+import { LayoutComponent } from './pages/layout/layout.component';
+import { HerosComponent } from './pages/heros/heros.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { TransferPanelComponent } from './demos/components/transfer-panel/transf
     TplVarComponent,
     TplOperatorsComponent,
     TransferPanelComponent,
+    LayoutComponent,
+    HerosComponent,
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule],
   providers: [],

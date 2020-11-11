@@ -25,7 +25,6 @@
 <!--  <label [style.font-size.px]="fontSize">FontSize: {{fontSize}}px</label>-->
 <!--</p>-->
 
-
 <!--<input type="text" [(ngModel)]="textVal" (blur)="getText()">-->
 <!--<p>textVal: {{textVal}}</p>-->
 <!--<button class="btn btn-primary" (click)="setVal()">setVal</button>-->
@@ -37,12 +36,15 @@
 <!--<app-tpl-var></app-tpl-var>-->
 
 <!--<app-tpl-operators></app-tpl-operators>-->
-<div class="main">
 
+<!-- <div class="main">
   <div class="wraper">
     <button class="btn btn-primary" (click)="setList()">reset</button>
     <button class="btn btn-info" (click)="search = !search">toggle search</button>
    <app-transfer-panel [list]="list" [search]="search" (changed)="onChanged($event)"></app-transfer-panel>
   </div>
+</div> -->
 
+<div id="app">
+  <app-layout></app-layout>
 </div>
