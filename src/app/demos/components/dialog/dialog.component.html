@@ -5,7 +5,10 @@
   role="dialog"
   (click)="backdropClick.emit()"
 >
-  <div class="modal-dialog modal-dialog-centered" (click)="$event.stopPropagation()">
+  <div
+    class="modal-dialog modal-dialog-centered"
+    (click)="$event.stopPropagation()"
+  >
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">{{ title }}</h5>
@@ -31,11 +34,7 @@
         >
           {{ cancelBtn }}
         </button>
-        <button
-          type="button"
-          class="btn btn-primary"
-          (click)="confirm.emit()"
-        >
+        <button type="button" class="btn btn-primary" (click)="onConfirm()">
           {{ confirmBtn }}
         </button>
       </div>

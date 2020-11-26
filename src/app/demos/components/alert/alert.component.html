@@ -1,0 +1,6 @@
+<p>alert works!</p>
+
+<div [class]="wrapCls" role="alert" appHighlight="green">
+  {{ options.content }}
+  <i class="close" (click)="closed.emit()">&times;</i>
+</div>

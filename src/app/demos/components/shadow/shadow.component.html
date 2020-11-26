@@ -1,0 +1,19 @@
+<p>shadow works!</p>
+<div class="main">
+  <div class="body">
+    <p>this is main content</p>
+    <div class="head bg-info">
+      <ng-content select=".head"></ng-content>
+    </div>
+
+    <ng-content select="[content]"></ng-content>
+    <div class="default bg-light">
+      <ng-content></ng-content>
+    </div>
+
+    <div class="foot bg-primary">
+      <ng-content select="#foot"></ng-content>
+    </div>
+    <!-- <ng-content></ng-content> -->
+  </div>
+</div>

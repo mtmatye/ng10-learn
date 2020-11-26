@@ -1,4 +1,4 @@
-<!--<div class="main">-->
+<!--<div class="crisis-list">-->
 <!--  <div class="alert alert-warning" role="alert">-->
 <!--    A simple info alert—check it out!-->
 <!--  </div>-->
@@ -37,7 +37,7 @@
 
 <!--<app-tpl-operators></app-tpl-operators>-->
 
-<!-- <div class="main">
+<!-- <div class="crisis-list">
   <div class="wraper">
     <button class="btn btn-primary" (click)="setList()">reset</button>
     <button class="btn btn-info" (click)="search = !search">toggle search</button>
@@ -46,22 +46,22 @@
 </div> -->
 
 <!-- <div id="app">
-  <app-layout></app-layout>
+  <app-home></app-home>
 </div> -->
 
 <!-- <div id="app">
   <div app-for></div>
-  <app-layout></app-layout>
+  <app-home></app-home>
 
   <p appHighlight [highlightColor]="'green'">highlight directive</p>
 </div> -->
 
-<!-- <div class="main">
+<!-- <div class="crisis-list">
   <app-example></app-example>
 </div> -->
 
-<div class="main">
-  <!-- <app-tpl-container></app-tpl-container> -->
+<!-- <div class="crisis-list">
+  <app-tpl-container></app-tpl-container>
   <app-tpl-outlet></app-tpl-outlet>
   <hr />
   <app-tpl-outlet [render]="outletTpl"></app-tpl-outlet>
@@ -70,4 +70,36 @@
 <ng-template #outletTpl let-default let-val="value">
   <h4>test more and more</h4>
   <p>default:{{ default }} | value: {{ val }}</p>
-</ng-template>
+</ng-template> -->
+
+<!-- <div class="crisis-list">
+  <app-shadow>
+    <div class="head">
+      <p>test header</p>
+    </div>
+    <div content>
+      <p>test content</p>
+    </div>
+    <h4>test default</h4>
+    <div id="foot">
+      <p>test footer</p>
+    </div>
+  </app-shadow>
+</div> -->
+
+<!-- <div class="crisis-list">
+  <app-view-child></app-view-child>
+</div> -->
+
+<!-- <div class="crisis-list">
+  <p appHighlight="pink">{{ 2 | exponentialStrength: 3 }}</p>
+  <app-example></app-example>
+</div> -->
+
+<div class="hero">
+  <!-- <app-home></app-home> -->
+  <!-- <app-example></app-example> -->
+  <router-outlet></router-outlet>
+  <!-- <app-name-editor></app-name-editor> -->
+  <!-- <app-profile-editor></app-profile-editor> -->
+</div>

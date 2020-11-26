@@ -1,0 +1,34 @@
+<div class="transfer">
+  <div class="panel-wrap">
+    <app-transfer-panel
+      [list]="leftShowDatas"
+      (selected)="onSelect($event, 'left')"
+      [search]="search"
+      (filter)="onFilter($event, 'left')"
+    ></app-transfer-panel>
+  </div>
+  <div class="operations">
+    <button
+      class="btn btn-primary"
+      [disabled]="disableBtn('right')"
+      (click)="to('right')"
+    >
+      &gt;
+    </button>
+    <button
+      class="btn btn-primary"
+      [disabled]="disableBtn('left')"
+      (click)="to('left')"
+    >
+      &lt;
+    </button>
+  </div>
+  <div class="panel-wrap">
+    <app-transfer-panel
+      [list]="rightShowDatas"
+      (selected)="onSelect($event, 'right')"
+      (filter)="onFilter($event, 'right')"
+      [search]="search"
+    ></app-transfer-panel>
+  </div>
+</div>

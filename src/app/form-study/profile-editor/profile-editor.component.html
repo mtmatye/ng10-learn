@@ -1,0 +1,135 @@
+<div class="profile-editor">
+  <!--
+  如果引入了FormsModule, <form>上就可以使用ngForm指令
+  profileForm就是NgForm类型, profileForm.form是FormGroup实例
+ -->
+  <form
+    #profileForm="ngForm"
+    appEqualValidator
+    (ngSubmit)="onSubmit(profileForm)"
+  >
+    <p>valid: {{ profileForm.valid }}</p>
+    <div>
+      <label>
+        First Name:
+        <input
+          class="form-control"
+          required
+          [(ngModel)]="model.firstName"
+          name="firstName"
+          #firstName="ngModel"
+        />
+      </label>
+      <div
+        *ngIf="firstName.dirty && firstName.errors"
+        class="alert alert-danger"
+      >
+        <p>Please Input Your Firstname!</p>
+      </div>
+    </div>
+    <div>
+      <label>
+        Last Name:
+        <input
+          class="form-control"
+          required
+          minlength="4"
+          [(ngModel)]="model.lastName"
+          name="lastName"
+          #lastName="ngModel"
+          appForbiddenName="bob"
+        />
+      </label>
+      <div
+        *ngIf="lastName.dirty && lastName.errors as errors"
+        class="alert alert-danger"
+      >
+        <span *ngIf="errors.required">Please input your lastname!</span>
+        <span *ngIf="errors.minlength">Should input at least 4 words!</span>
+        <span *ngIf="errors.forbiddenName">{{
+          errors.forbiddenName.value
+        }}</span>
+      </div>
+    </div>
+    <div>
+      <label>
+        mobile:
+        <input
+          class="form-control"
+          type="tel"
+          required
+          pattern="\d{11}"
+          [(ngModel)]="model.mobile"
+          name="mobile"
+          #mobile="ngModel"
+          appHasMobile
+          [ngModelOptions]="{ updateOn: 'blur' }"
+        />
+      </label>
+      <div
+        *ngIf="mobile.dirty && mobile.errors as errors"
+        class="alert alert-danger"
+      >
+        <span *ngIf="errors.required">Please input your mobile number!</span>
+        <span *ngIf="errors.pattern">Please input valid mobile!</span>
+        <span *ngIf="errors.exist">{{ errors.exist }}</span>
+      </div>
+    </div>
+    <div>
+      <div>
+        <label>
+          password:
+          <input
+            class="form-control"
+            required
+            minlength="6"
+            maxlength="16"
+            [(ngModel)]="model.password"
+            name="password"
+            #password="ngModel"
+          />
+        </label>
+        <div
+          *ngIf="password.dirty && password.errors as errors"
+          class="alert alert-danger"
+        >
+          <span *ngIf="errors.required">Please input password!</span>
+          <span *ngIf="errors.minlength">Should input at least 6 words!</span>
+          <span *ngIf="errors.maxlength">Should input less than 16 words!</span>
+        </div>
+      </div>
+      <div>
+        <label>
+          rePassword:
+          <input
+            class="form-control"
+            required
+            [(ngModel)]="model.rePassword"
+            name="rePassword"
+            #rePassword="ngModel"
+          />
+        </label>
+        <div
+          *ngIf="rePassword.dirty && rePassword.errors as errors"
+          class="alert alert-danger"
+        >
+          <span *ngIf="errors.required">Please re-input password!</span>
+        </div>
+      </div>
+      <div
+        *ngIf="profileForm.dirty && profileForm.errors as err"
+        class="alert alert-danger"
+      >
+        <p>{{ err.equal }}</p>
+      </div>
+    </div>
+    <button class="btn btn-primary" type="submit">提交</button>
+    <button
+      class="btn btn-secondary ml-2"
+      type="button"
+      (click)="onReset(profileForm)"
+    >
+      reset
+    </button>
+  </form>
+</div>

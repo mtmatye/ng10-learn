@@ -1,0 +1,15 @@
+<div class="crisis-center">
+  <h3>Crisis List</h3>
+  <ul class="list-group">
+    <li
+      *ngFor="let crisis of crises$ | async"
+      class="list-group-item"
+      [class.active]="crisis.id === selectedId"
+      [routerLink]="['./', crisis.id]"
+      (click)="onSelected(crisis.id)"
+    >
+      {{ crisis.name }}
+    </li>
+  </ul>
+</div>
+<router-outlet></router-outlet>

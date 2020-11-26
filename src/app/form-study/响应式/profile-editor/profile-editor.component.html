@@ -1,0 +1,134 @@
+<p>profile-editor works!</p>
+
+<form [formGroup]="profileForm">
+  <div>
+    <label>
+      First Name:
+      <input type="text" formControlName="firstName" />
+    </label>
+    <div *ngIf="firstName.dirty && firstName.errors" class="alert alert-danger">
+      <p>Please Input Your Firstname!</p>
+    </div>
+  </div>
+
+  <div>
+    <label>
+      Last Name:
+      <input type="text" formControlName="lastName" />
+    </label>
+    <div
+      *ngIf="lastName.dirty && lastName.errors as errors"
+      class="alert alert-danger"
+    >
+      <span *ngIf="errors.required">Please input your lastname!</span>
+      <span *ngIf="errors.minlength">Should input at least 4 words!</span>
+      <span *ngIf="errors.forbiddenName">{{ errors.forbiddenName.value }}</span>
+    </div>
+    <!-- <div
+      *ngIf="lastName.dirty && lastName.errors as err"
+      class="alert alert-danger"
+    >
+      <p *ngIf="err.required">Please Input Your Lastname!</p>
+    </div> -->
+  </div>
+
+  <div>
+    <label>
+      Mobile:
+      <input type="text" formControlName="mobile" />
+    </label>
+    <div
+      *ngIf="mobile.dirty && mobile.errors as errors"
+      class="alert alert-danger"
+    >
+      <span *ngIf="errors.required">Please input your mobile number!</span>
+      <span *ngIf="errors.pattern">Please input valid mobile!</span>
+      <span *ngIf="errors.exist">{{ errors.exist }}</span>
+    </div>
+  </div>
+
+  <!-- <div formGroupName="address">
+    <h3>Address</h3>
+
+    <label class="d-block">
+      Street:
+      <input type="text" formControlName="street" />
+    </label>
+
+    <label class="d-block">
+      City:
+      <input type="text" formControlName="city" />
+    </label>
+
+    <label class="d-block">
+      State:
+      <input type="text" formControlName="state" />
+    </label>
+
+    <label class="d-block">
+      Zip Code:
+      <input type="text" formControlName="zip" />
+    </label>
+  </div>
+  <div formArrayName="aliases">
+    <h3>Aliases</h3>
+
+    <div *ngFor="let alias of aliases.controls; let i = index">
+      <label>
+        Alias:
+        <input type="text" [formControlName]="i" />
+      </label>
+    </div>
+  </div> -->
+
+  <div formGroupName="newPass">
+    <div>
+      <label class="d-block">
+        password:
+        <input type="password" formControlName="password" />
+      </label>
+      <div
+        *ngIf="
+          newPass.get('password').dirty &&
+          newPass.get('password').errors as errors
+        "
+        class="alert alert-danger"
+      >
+        <span *ngIf="errors.required">Please input password!</span>
+        <span *ngIf="errors.minlength">Should input at least 6 words!</span>
+        <span *ngIf="errors.maxlength">Should input less than 16 words!</span>
+      </div>
+    </div>
+    <div>
+      <label class="d-block">
+        re-input:
+        <input type="password" formControlName="rePassword" />
+      </label>
+      <div
+        *ngIf="
+          newPass.get('rePassword').dirty &&
+          newPass.get('rePassword').errors as errors
+        "
+        class="alert alert-danger"
+      >
+        <span *ngIf="errors.required">Please re-input password!</span>
+      </div>
+    </div>
+    <div
+      *ngIf="newPass.dirty && newPass.errors as err"
+      class="alert alert-danger"
+    >
+      <p>{{ err.equal }}</p>
+    </div>
+  </div>
+
+  <button class="btn btn-primary mr-3" type="submit" (click)="updateProfile()">
+    SUBMIT
+  </button>
+  <button class="btn btn-primary mr-3" type="submit" (click)="updateProfile2()">
+    SUBMIT 2
+  </button>
+  <button class="btn btn-primary mr-3" type="submit" (click)="addAliaes()">
+    ADD ALIAS
+  </button>
+</form>

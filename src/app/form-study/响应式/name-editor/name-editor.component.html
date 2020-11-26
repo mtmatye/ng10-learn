@@ -1,0 +1,7 @@
+<p>name-editor works!</p>
+<label>
+  Name:
+  <input type="text" [formControl]="name" />
+  <p>Value: {{ name.value }}</p>
+  <button class="btn btn-primary" (click)="setName()">SET</button>
+</label>

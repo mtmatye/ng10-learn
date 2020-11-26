@@ -1,0 +1,8 @@
+<div class="autocomplete">
+  <input #input class="form-control" placeholder="search..." />
+  <ul class="list-group mt-2">
+    <li class="list-group-item" *ngFor="let item of list$ | async">
+      {{ item }}
+    </li>
+  </ul>
+</div>

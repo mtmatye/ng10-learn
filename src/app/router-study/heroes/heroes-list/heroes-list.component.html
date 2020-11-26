@@ -1,0 +1,13 @@
+<div class="heroes-list">
+  <h3>Heroes List</h3>
+  <ul class="list-group">
+    <li
+      *ngFor="let hero of heroes$ | async"
+      class="list-group-item"
+      [class.active]="hero.id === selectedId"
+      [routerLink]="['/hero', hero.id]"
+    >
+      {{ hero.name }}
+    </li>
+  </ul>
+</div>
