@@ -37,6 +37,8 @@ export class AlertComponent implements OnInit {
     theme: 'info',
   };
   @Output() closed = new EventEmitter<void>();
+
+
   get wrapCls(): string {
     return `alert alert-${this.options.theme}`;
   }

@@ -37,7 +37,12 @@
             </select>
           </div>
           <div class="col">
-            <button class="btn btn-primary" (click)="search()">搜索</button>
+            <button class="btn btn-primary mr-3" (click)="search()">
+              搜索
+            </button>
+            <button class="btn btn-primary" type="button" (click)="reset()">
+              重置
+            </button>
           </div>
         </div>
       </form>
@@ -101,6 +106,7 @@
         <p class="text-center">empty</p>
       </ng-template>
     </div>
+    <app-spin [show]="showSpin"></app-spin>
   </div>
 </div>
 
